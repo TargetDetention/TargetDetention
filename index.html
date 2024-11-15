@@ -17,32 +17,35 @@
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
     <link rel="stylesheet" href="./style.css">
   </head>
-  <body class="p-6">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-2 gap-10">
-      <div class="bg-white shadow-lg rounded-lg p-6 fads fade-in">
+  <body class="bg-gray-50 p-8 font-roboto">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      <!-- Detention Form Section -->
+      <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-10">
         <img
           src="https://marketing.uz/uploads/articles/5412/article-original.png"
           alt="School Logo"
-          class="w-40 mx-auto mb-1"
+          class="w-32 mx-auto mb-4"
         />
-        <h1 class="text-2xl font-bold text-center mb-6">Detention Qismi</h1>
+        <h1 class="text-3xl font-semibold text-center text-blue-600 mb-6">Detention Form</h1>
 
-        <form id="detention-form" class="space-y-4">
+        <form id="detention-form" class="space-y-6">
+          <!-- Name Field -->
           <div>
-            <label class="block font-medium text-gray-700">Ism Sharif</label>
+            <label class="block text-gray-700 font-medium">Ism Sharif</label>
             <input
               type="text"
               name="name"
-              class="w-full border rounded px-3 py-2"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
 
+          <!-- Class Field -->
           <div>
-            <label class="block font-medium text-gray-700">Sinf</label>
+            <label class="block text-gray-700 font-medium">Sinf</label>
             <select
               name="class"
-              class="w-full border rounded px-3 py-2"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             >
               <option value="">Sinf tanlang</option>
@@ -63,23 +66,23 @@
             </select>
           </div>
 
+          <!-- Reason Field -->
           <div>
-            <label class="block font-medium text-gray-700"
-              >Sabab:</label
-            >
+            <label class="block text-gray-700 font-medium">Sabab</label>
             <input
               type="text"
               name="reason"
-              class="w-full border rounded px-3 py-2"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
 
+          <!-- Level Field -->
           <div>
-            <label class="block font-medium text-gray-700">Level</label>
+            <label class="block text-gray-700 font-medium">Level</label>
             <select
               name="level"
-              class="w-full border rounded px-3 py-2"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             >
               <option value="">Level tanlang</option>
@@ -89,11 +92,12 @@
             </select>
           </div>
 
+          <!-- Teacher Field -->
           <div>
-            <label class="block font-medium text-gray-700 mb-2">Ustozni tanlang</label>
+            <label class="block text-gray-700 font-medium">Ustozni tanlang</label>
             <select
               name="teacher"
-              class="w-full border rounded px-3 py-2"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             >
               <option value="">Ustozni tanlang</option>
@@ -103,40 +107,47 @@
             </select>
           </div>
 
-          <div class="wrapper">
-              <button class="button-1" type="button" onclick="addStudent()" href="#">Qoshish</button>
-            </div>
+          <!-- Add Student Button -->
+          <div class="text-center">
+            <button
+              type="button"
+              onclick="addStudent()"
+              class="glow-on-hover"
+            >
+              Qoshish
+            </button>
+          </div>
         </form>
       </div>
 
-      <div
-        class="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col students"
-        style="height: 610px"
-      >
-      <img
-      src="https://marketing.uz/uploads/articles/5412/article-original.png"
-      alt="School Logo"
-      class="w-40 mx-auto mb-4"
-    />
-        <h2 class="text-xl font-bold text-center mb-3">Studentlar Spiskasi</h2>
+      <!-- Student List Section -->
+      <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between">
+        <img
+          src="https://marketing.uz/uploads/articles/5412/article-original.png"
+          alt="School Logo"
+          class="w-32 mx-auto mb-4"
+        />
+        <h2 class="text-2xl font-semibold text-center text-blue-600 mb-4">Studentlar Spiskasi</h2>
 
         <ul
           id="student-list"
-          class="space-y-4 overflow-y-auto flex-grow pr-2"
-          style="max-height: calc(100% - 60px)"
+          class="space-y-4 overflow-y-auto flex-grow pr-4"
+          style="max-height: 500px"
         ></ul>
 
-        <div class="mt-4">
+        <!-- Send Button -->
+        <div class="text-center mt-6">
           <button
             type="button"
             onclick="sendToTelegram()"
-            class="mx-40 glow-on-hover"
+            class="px-6 py-3 glow-on-hover"
           >
             Jonatish
           </button>
         </div>
       </div>
- 
-      <script src="./java.js"></script>
+    </div>
+
+    <script src="./java.js"></script>
   </body>
 </html>
