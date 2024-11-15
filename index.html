@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detention Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body class="p-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-2 gap-10">
+      <div class="bg-white shadow-lg rounded-lg p-6 fads fade-in">
+        <img
+          src="https://marketing.uz/uploads/articles/5412/article-original.png"
+          alt="School Logo"
+          class="w-40 mx-auto mb-1"
+        />
+        <h1 class="text-2xl font-bold text-center mb-6">Detention Qismi</h1>
+
+        <form id="detention-form" class="space-y-4">
+          <div>
+            <label class="block font-medium text-gray-700">Ism Sharif</label>
+            <input
+              type="text"
+              name="name"
+              class="w-full border rounded px-3 py-2"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block font-medium text-gray-700">Sinf</label>
+            <select
+              name="class"
+              class="w-full border rounded px-3 py-2"
+              required
+            >
+              <option value="">Sinf tanlang</option>
+              <option value="5A">5А</option>
+              <option value="5B">5Б</option>
+              <option value="6A">6А</option>
+              <option value="6B">6Б</option>
+              <option value="7A">7А</option>
+              <option value="7B">7Б</option>
+              <option value="8A">8А</option>
+              <option value="8B">8Б</option>
+              <option value="9A">9А</option>
+              <option value="9B">9Б</option>
+              <option value="10A">10А</option>
+              <option value="10B">10Б</option>
+              <option value="11A">11А</option>
+              <option value="11B">11Б</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Sabab:</label
+            >
+            <input
+              type="text"
+              name="reason"
+              class="w-full border rounded px-3 py-2"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block font-medium text-gray-700">Level</label>
+            <select
+              name="level"
+              class="w-full border rounded px-3 py-2"
+              required
+            >
+              <option value="">Level tanlang</option>
+              <option value="Low">Low</option>
+              <option value="Middle">Middle</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-medium text-gray-700 mb-2">Ustozni tanlang</label>
+            <select
+              name="teacher"
+              class="w-full border rounded px-3 py-2"
+              required
+            >
+              <option value="">Ustozni tanlang</option>
+              <option value="Ulugbek">Ulugbek</option>
+              <option value="Bekzod">Bekzod</option>
+              <option value="Sheroz">Sheroz</option>
+            </select>
+          </div>
+
+          <div class="wrapper">
+              <button class="button-1" type="button" onclick="addStudent()" href="#">Qoshish</button>
+            </div>
+        </form>
+      </div>
+
+      <div
+        class="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col students"
+        style="height: 610px"
+      >
+      <img
+      src="https://marketing.uz/uploads/articles/5412/article-original.png"
+      alt="School Logo"
+      class="w-40 mx-auto mb-4"
+    />
+        <h2 class="text-xl font-bold text-center mb-3">Studentlar Spiskasi</h2>
+
+        <ul
+          id="student-list"
+          class="space-y-4 overflow-y-auto flex-grow pr-2"
+          style="max-height: calc(100% - 60px)"
+        ></ul>
+
+        <div class="mt-4">
+          <button
+            type="button"
+            onclick="sendToTelegram()"
+            class="mx-40 glow-on-hover"
+          >
+            Jonatish
+          </button>
+        </div>
+      </div>
+ 
+      <script src="./java.js"></script>
+  </body>
+</html>
